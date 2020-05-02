@@ -1,22 +1,20 @@
-package model;
+package DTO;
 
 import lombok.*;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import java.util.Set;
 
-@Getter
 @Setter
-@RequiredArgsConstructor
+@Getter
+@NoArgsConstructor
 @ToString
+@AllArgsConstructor
 @XmlAccessorType(XmlAccessType.FIELD)
 @EqualsAndHashCode
-@AllArgsConstructor
-public class PassengerDTO {
+public class CountryDTO {
     public String name;
-
-    public String surname;
-
-    public String email;
+    public Set<CityDTO> citiesList;
 
 }

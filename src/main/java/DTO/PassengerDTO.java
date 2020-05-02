@@ -1,6 +1,5 @@
-package model;
+package DTO;
 
-import DTO.PassengerDTO;
 import lombok.*;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,12 +12,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @EqualsAndHashCode
 @AllArgsConstructor
-public class Ticket {
+public class PassengerDTO {
+    public String name;
 
-    public Flight flight;
+    public String surname;
 
-    public PassengerDTO passenger;
-
-    public Integer code;
+    public String email;
 
 }

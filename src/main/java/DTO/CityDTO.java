@@ -1,11 +1,9 @@
-package model;
-
+package DTO;
 
 import lombok.*;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import java.util.Date;
 
 @Setter
 @Getter
@@ -14,16 +12,6 @@ import java.util.Date;
 @AllArgsConstructor
 @XmlAccessorType(XmlAccessType.FIELD)
 @EqualsAndHashCode
-public class Flight {
-
-    public int id;
-
-    public Airport to_AirPort;
-
-    public Airport from_AirPort;
-
-    public String flightDate;
-
-    public int price;
-
+public class CityDTO {
+    public String name;
 }
