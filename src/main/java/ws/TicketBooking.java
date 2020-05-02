@@ -2,10 +2,14 @@ package ws;
 
 import Impl.AirPortImp;
 import Impl.FlightImpl;
+import Impl.PassengerImpl;
 import dataAccess.IAirport;
 import dataAccess.IFlight;
+import dataAccess.IPassenger;
 import model.Airport;
 import model.Flight;
+import model.Passenger;
+import model.PassengerDTO;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -19,6 +23,10 @@ public class TicketBooking {
 
     FlightImpl flightImpl = new FlightImpl();
     List<Flight> flightList = flightImpl.generateFlightsList(airPortsList);
+
+    PassengerImpl passagerImpl = new PassengerImpl();
+    List<Passenger> passengerList = passagerImpl.generatePassengerList();
+
 
     @WebMethod
     public List<Airport> findAirPortByCity(String City){
@@ -43,4 +51,17 @@ public class TicketBooking {
         IFlight flight = new FlightImpl();
         return flight.findFlightsBetweenGivenCities((ArrayList<Flight>) flightList, from, to);
     }
+
+    @WebMethod
+    public List<Passenger> register(Passenger passenger){
+        IPassenger iPassenger = new PassengerImpl();
+        return iPassenger.register(passenger,passengerList);
+    }
+
+    @WebMethod
+    public PassengerDTO login(String login, String password){
+        IPassenger passenger = new PassengerImpl();
+        return passenger.login(passengerList, login, password);
+    }
+
 }
