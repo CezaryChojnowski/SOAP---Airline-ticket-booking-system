@@ -6,6 +6,7 @@ import model.Passenger;
 import model.Ticket;
 
 import java.util.Date;
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
@@ -18,6 +19,6 @@ public interface ITicket {
     public Ticket checkReservation(int number_of_reservation);
 
     @WebMethod
-    public Flight BookFlight(Passenger passenger, Airport from, Airport to, Date date);
+    public List<Ticket> BookFlight(Passenger passenger, Flight flight);
 
 }
