@@ -1,5 +1,7 @@
 package ws;
 
+import DTO.CountryDTO;
+import DTO.PassengerDTO;
 import Impl.AirPortImp;
 import Impl.FlightImpl;
 import Impl.PassengerImpl;
@@ -14,6 +16,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @WebService
 public class TicketBooking {
@@ -37,6 +40,18 @@ public class TicketBooking {
     }
 
     @WebMethod
+    public Set<CountryDTO> findAllTheCountriesThatPlanesDepartFrom(){
+        IFlight iFlight = new FlightImpl();
+        return iFlight.findAllTheCountriesThatPlanesDepartFrom(flightList);
+    }
+
+    @WebMethod
+    public Set<CountryDTO> findAllCountriesToWhichPlanesDepartFromAgivenCity(String country, String city){
+        IFlight iFlight = new FlightImpl();
+        return iFlight.findAllCountriesToWhichPlanesDepartFromAgivenCity(flightList, country, city);
+    }
+
+    @WebMethod
     public List<Airport> findAirPortByCountry(String Country){
         IAirport airport = new AirPortImp();
         return airport.findAirPortByCountry((ArrayList<Airport>) airPortsList, Country);
@@ -49,15 +64,24 @@ public class TicketBooking {
     }
 
     @WebMethod
-    public List<Flight> findFlightsBetweenGivenCities(Airport from, Airport to){
+    public List<Flight> findFlightsBetweenGivenCities(String countryFrom,
+                                                      String cityFrom,
+                                                      String countryTo,
+                                                      String cityTo,
+                                                      String flightDate){
         IFlight flight = new FlightImpl();
-        return flight.findFlightsBetweenGivenCities((ArrayList<Flight>) flightList, from, to);
+        return flight.findFlightsBetweenGivenCities((ArrayList<Flight>) flightList,
+                 countryFrom,
+                 cityFrom,
+                 countryTo,
+                 cityTo,
+                 flightDate);
     }
 
     @WebMethod
     public boolean BookFlight(Flight flight, PassengerDTO passenger){
         ITicket iTicket = new TicketImpl();
-        iTicket.BookFlight(passenger, flight, ticketList);
+        iTicket.bookFlight(passenger, flight, ticketList);
         return true;
     }
 
@@ -79,5 +103,4 @@ public class TicketBooking {
         ITicket iTicket = new TicketImpl();
         return iTicket.checkReservation(number_of_reservation, ticketList);
     }
-
 }

@@ -4,7 +4,7 @@ import dataAccess.ITicket;
 import error.ReservationNotFoundException;
 import model.Flight;
 import model.Passenger;
-import model.PassengerDTO;
+import DTO.PassengerDTO;
 import model.Ticket;
 
 import javax.jws.WebService;
@@ -31,7 +31,7 @@ public class TicketImpl implements ITicket {
     }
 
     @Override
-    public List<Ticket> BookFlight(PassengerDTO passengerDTO, Flight flight, List<Ticket> ticketList) {
+    public List<Ticket> bookFlight(PassengerDTO passengerDTO, Flight flight, List<Ticket> ticketList) {
             int ticketCode = generateTicketCode(ticketList);
             Ticket ticket = new Ticket(flight, passengerDTO, ticketCode);
             ticketList.add(ticket);

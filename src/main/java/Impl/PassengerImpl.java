@@ -3,7 +3,7 @@ package Impl;
 import dataAccess.IPassenger;
 import error.InvalidLoginDataException;
 import model.Passenger;
-import model.PassengerDTO;
+import DTO.PassengerDTO;
 
 import javax.jws.WebService;
 import java.util.ArrayList;
@@ -32,7 +32,6 @@ public class PassengerImpl implements IPassenger {
                 .filter(p -> p.login.equals(login))
                 .filter(p -> p.password.equals(password))
                 .collect(Collectors.toList());
-        System.out.println(passengers);
         if (passengers.isEmpty()){
             throw new InvalidLoginDataException("Invalid login or password");
         }else{
