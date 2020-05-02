@@ -1,15 +1,19 @@
 package model;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 
 @Setter
 @Getter
 @RequiredArgsConstructor
+@AllArgsConstructor
 @ToString
+@XmlAccessorType(XmlAccessType.FIELD)
+@EqualsAndHashCode
 public class Airport {
+
     public int id;
 
     public String country;
