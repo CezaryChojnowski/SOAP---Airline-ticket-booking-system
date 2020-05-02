@@ -12,15 +12,11 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @XmlAccessorType(XmlAccessType.FIELD)
 @EqualsAndHashCode
 @AllArgsConstructor
-public class Passenger {
-
+public class PassengerDTO {
     public String name;
 
     public String surname;
 
     public String email;
 
-    public String login;
-
-    public String password;
 }
