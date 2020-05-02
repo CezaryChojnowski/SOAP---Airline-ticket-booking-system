@@ -2,7 +2,7 @@ package dataAccess;
 
 import model.Flight;
 import model.Passenger;
-import model.PassengerDTO;
+import DTO.PassengerDTO;
 import model.Ticket;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public interface ITicket {
     public Ticket checkReservation(Integer number_of_reservation, List<Ticket> ticketList);
 
     @WebMethod
-    public List<Ticket> BookFlight(PassengerDTO passenger, Flight flight, List<Ticket> ticketList);
+    public List<Ticket> bookFlight(PassengerDTO passenger, Flight flight, List<Ticket> ticketList);
 
     public List<Ticket> getAllTicket(List<Ticket> ticketList);
 

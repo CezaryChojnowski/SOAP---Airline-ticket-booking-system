@@ -1,7 +1,6 @@
 package dataAccess;
 
 import model.Airport;
-import model.Flight;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;

@@ -1,7 +1,7 @@
 package dataAccess;
 
 import model.Passenger;
-import model.PassengerDTO;
+import DTO.PassengerDTO;
 
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
