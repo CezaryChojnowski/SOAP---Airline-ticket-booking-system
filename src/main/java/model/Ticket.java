@@ -11,12 +11,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @ToString
 @XmlAccessorType(XmlAccessType.FIELD)
 @EqualsAndHashCode
+@AllArgsConstructor
 public class Ticket {
-
-    public int id;
 
     public Flight flight;
 
-    public Passenger passenger;
+    public PassengerDTO passenger;
+
+    public Integer code;
 
 }

@@ -3,13 +3,12 @@ package ws;
 import Impl.AirPortImp;
 import Impl.FlightImpl;
 import Impl.PassengerImpl;
+import Impl.TicketImpl;
 import dataAccess.IAirport;
 import dataAccess.IFlight;
 import dataAccess.IPassenger;
-import model.Airport;
-import model.Flight;
-import model.Passenger;
-import model.PassengerDTO;
+import dataAccess.ITicket;
+import model.*;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -24,8 +23,11 @@ public class TicketBooking {
     FlightImpl flightImpl = new FlightImpl();
     List<Flight> flightList = flightImpl.generateFlightsList(airPortsList);
 
-    PassengerImpl passagerImpl = new PassengerImpl();
-    List<Passenger> passengerList = passagerImpl.generatePassengerList();
+    PassengerImpl passengerImpl = new PassengerImpl();
+    List<Passenger> passengerList = passengerImpl.generatePassengerList();
+
+    TicketImpl ticketImpl = new TicketImpl();
+    List<Ticket> ticketList = ticketImpl.generateTickets(flightList, passengerList);
 
 
     @WebMethod
@@ -53,15 +55,29 @@ public class TicketBooking {
     }
 
     @WebMethod
-    public List<Passenger> register(Passenger passenger){
+    public boolean BookFlight(Flight flight, PassengerDTO passenger){
+        ITicket iTicket = new TicketImpl();
+        iTicket.BookFlight(passenger, flight, ticketList);
+        return true;
+    }
+
+    @WebMethod
+    public boolean register(Passenger passenger){
         IPassenger iPassenger = new PassengerImpl();
-        return iPassenger.register(passenger,passengerList);
+        iPassenger.register(passenger,passengerList);
+        return true;
     }
 
     @WebMethod
     public PassengerDTO login(String login, String password){
         IPassenger passenger = new PassengerImpl();
         return passenger.login(passengerList, login, password);
+    }
+
+    @WebMethod
+    public Ticket checkReservation(int number_of_reservation){
+        ITicket iTicket = new TicketImpl();
+        return iTicket.checkReservation(number_of_reservation, ticketList);
     }
 
 }
