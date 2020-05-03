@@ -1,5 +1,9 @@
 package Impl;
 
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
 import dataAccess.ITicket;
 import error.ReservationNotFoundException;
 import model.Flight;
@@ -8,6 +12,7 @@ import DTO.PassengerDTO;
 import model.Ticket;
 
 import javax.jws.WebService;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -35,7 +40,18 @@ public class TicketImpl implements ITicket {
             int ticketCode = generateTicketCode(ticketList);
             Ticket ticket = new Ticket(flight, passengerDTO, ticketCode);
             ticketList.add(ticket);
-            return ticketList;
+
+        PdfWriter writer = null;
+        try {
+            writer = new PdfWriter("Potwierdzenie.pdf");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        PdfDocument pdf = new PdfDocument(writer);
+        Document document = new Document(pdf);
+        document.add(new Paragraph().add("Flight: " + flight));
+        document.close();
+        return ticketList;
     }
 
     @Override

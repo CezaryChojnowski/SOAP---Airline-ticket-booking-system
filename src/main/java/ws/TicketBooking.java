@@ -79,10 +79,11 @@ public class TicketBooking {
     }
 
     @WebMethod
-    public boolean BookFlight(Flight flight, PassengerDTO passenger){
+    public Ticket BookFlight(Flight flight, PassengerDTO passenger){
         ITicket iTicket = new TicketImpl();
-        iTicket.bookFlight(passenger, flight, ticketList);
-        return true;
+        List<Ticket> ticketsList = iTicket.bookFlight(passenger, flight, ticketList);
+        Ticket ticket = ticketsList.get(ticketsList.size()-1);
+        return ticket;
     }
 
     @WebMethod
