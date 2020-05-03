@@ -14,8 +14,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 @EqualsAndHashCode
 public class Airport {
 
-    public int id;
-
     public String country;
 
     public String city;

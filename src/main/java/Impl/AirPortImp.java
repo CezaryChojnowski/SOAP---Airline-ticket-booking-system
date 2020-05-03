@@ -21,11 +21,18 @@ public class AirPortImp implements IAirport {
     }
 
     public List<Airport> generateAirPortsList() {
-        List<Airport> airPortList = new ArrayList<>();
-        airPortList.add(new Airport(1,"Poland","Warsaw","Chopin","Franciszka Żwirki i Stanisława Wigury",1));
-        airPortList.add(new Airport(2,"Italy","Rome","Rome-Ciampino","Via Appia Nuova",1651));
-        airPortList.add(new Airport(3,"France","Paris","Paris-Roissy-Charles de Gaulle","Roissy-en-France",95700 ));
-        return airPortList;
+        List<Airport> airportList = new ArrayList<>();
+        airportList.add(new Airport("Poland","Warsaw","Chopin","Franciszka Żwirki i Stanisława Wigury",1));
+        airportList.add(new Airport("Italy","Rome","Rome-Ciampino","Via Appia Nuova",1651));
+        airportList.add(new Airport("France","Paris","Paris-Roissy-Charles de Gaulle","Roissy-en-France",95700 ));
+        airportList.add(new Airport("Germany","Norymberga","Nürnberg","Flughafenstraße",100));
+        airportList.add(new Airport("Spain","Reus","de Reus","Av. de Tarragona",43204));
+        airportList.add(new Airport("Portugal","Porto","Francisco Sá Carneiro","Maia",4470 ));
+        airportList.add(new Airport("Russia","Moscow","Шереметьево - аэропорт имени","Khimki",1414));
+        airportList.add(new Airport("USA","New york","LaGuardia","Queens",11371));
+        airportList.add(new Airport("France","Paris","Beauvais-Tillé","Route de l'Aéroport",60000 ));
+        airportList.add(new Airport("Brasil","São Paulo","São Paulo-Guarulhos","Rod.Helio Smidt",719));
+        return airportList;
     }
 
 }

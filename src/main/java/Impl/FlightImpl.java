@@ -38,7 +38,7 @@ public class FlightImpl implements IFlight {
                     " - " +
                     countryTo +
                     ", " +
-                    countryTo +
+                    cityTo +
                     " on " +
                     flightDate);
         }
@@ -92,7 +92,51 @@ public class FlightImpl implements IFlight {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
         String date = simpleDateFormat.format(new Date());
-        flightList.add(new Flight(1, airportList.get(0), airportList.get(1), date, 60));
+        flightList.add(new Flight( airportList.get(0), airportList.get(1), date, 60));
+        flightList.add(new Flight( airportList.get(0), airportList.get(2), date, 60));
+        flightList.add(new Flight( airportList.get(0), airportList.get(3), date, 60));
+        flightList.add(new Flight( airportList.get(0), airportList.get(4), date, 60));
+        flightList.add(new Flight( airportList.get(0), airportList.get(5), date, 60));
+        flightList.add(new Flight(airportList.get(0), airportList.get(6), date, 60));
+        flightList.add(new Flight(airportList.get(0), airportList.get(7), date, 60));
+        flightList.add(new Flight(airportList.get(0), airportList.get(8), date, 60));
+        flightList.add(new Flight(airportList.get(0), airportList.get(9), date, 60));
+        flightList.add(new Flight(airportList.get(1), airportList.get(2), date, 60));
+        flightList.add(new Flight(airportList.get(1), airportList.get(3), date, 60));
+        flightList.add(new Flight(airportList.get(1), airportList.get(4), date, 60));
+        flightList.add(new Flight(airportList.get(1), airportList.get(5), date, 60));
+        flightList.add(new Flight(airportList.get(1), airportList.get(6), date, 60));
+        flightList.add(new Flight(airportList.get(1), airportList.get(7), date, 60));
+        flightList.add(new Flight(airportList.get(1), airportList.get(8), date, 60));
+        flightList.add(new Flight(airportList.get(1), airportList.get(9), date, 60));
+        flightList.add(new Flight(airportList.get(2), airportList.get(3), date, 60));
+        flightList.add(new Flight(airportList.get(2), airportList.get(4), date, 60));
+        flightList.add(new Flight(airportList.get(2), airportList.get(5), date, 60));
+        flightList.add(new Flight(airportList.get(2), airportList.get(6), date, 60));
+        flightList.add(new Flight(airportList.get(2), airportList.get(7), date, 60));
+        flightList.add(new Flight(airportList.get(2), airportList.get(8), date, 60));
+        flightList.add(new Flight(airportList.get(2), airportList.get(9), date, 60));
+        flightList.add(new Flight(airportList.get(3), airportList.get(4), date, 60));
+        flightList.add(new Flight(airportList.get(3), airportList.get(5), date, 60));
+        flightList.add(new Flight(airportList.get(3), airportList.get(6), date, 60));
+        flightList.add(new Flight(airportList.get(3), airportList.get(7), date, 60));
+        flightList.add(new Flight(airportList.get(3), airportList.get(8), date, 60));
+        flightList.add(new Flight(airportList.get(3), airportList.get(9), date, 60));
+        flightList.add(new Flight(airportList.get(4), airportList.get(5), date, 60));
+        flightList.add(new Flight(airportList.get(4), airportList.get(6), date, 60));
+        flightList.add(new Flight(airportList.get(4), airportList.get(7), date, 60));
+        flightList.add(new Flight(airportList.get(4), airportList.get(8), date, 60));
+        flightList.add(new Flight(airportList.get(4), airportList.get(9), date, 60));
+        flightList.add(new Flight(airportList.get(5), airportList.get(6), date, 60));
+        flightList.add(new Flight(airportList.get(5), airportList.get(7), date, 60));
+        flightList.add(new Flight(airportList.get(5), airportList.get(8), date, 60));
+        flightList.add(new Flight(airportList.get(5), airportList.get(9), date, 60));
+        flightList.add(new Flight(airportList.get(6), airportList.get(7), date, 60));
+        flightList.add(new Flight(airportList.get(6), airportList.get(8), date, 60));
+        flightList.add(new Flight(airportList.get(6), airportList.get(9), date, 60));
+        flightList.add(new Flight(airportList.get(7), airportList.get(8), date, 60));
+        flightList.add(new Flight(airportList.get(7), airportList.get(9), date, 60));
+        flightList.add(new Flight(airportList.get(8), airportList.get(7), date, 60));
         return flightList;
     }
 

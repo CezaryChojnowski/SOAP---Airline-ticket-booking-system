@@ -16,8 +16,6 @@ import java.util.Date;
 @EqualsAndHashCode
 public class Flight {
 
-    public int id;
-
     public Airport to_AirPort;
 
     public Airport from_AirPort;
