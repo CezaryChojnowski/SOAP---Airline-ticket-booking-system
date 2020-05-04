@@ -8,6 +8,9 @@ import model.Passenger;
 import DTO.PassengerDTO;
 
 import javax.jws.WebService;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,9 +30,28 @@ public class PassengerImpl implements IPassenger {
         if(!isValid(passenger)){
             throw new AllFieldsMustBeCompletedExpcetion("All fields must be completed");
         }
+        String hashPassword = hashPassword(passenger.getPassword());
+        passenger.setPassword(hashPassword);
         passengerList.add(passenger);
         return passengerList;
     }
+
+    public String hashPassword(String password)
+        {
+            try {
+                MessageDigest md = MessageDigest.getInstance("SHA-512");
+                byte[] messageDigest = md.digest(password.getBytes());
+                BigInteger no = new BigInteger(1, messageDigest);
+                String hashtext = no.toString(16);
+                while (hashtext.length() < 32) {
+                    hashtext = "0" + hashtext;
+                }
+                return hashtext;
+            }
+            catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
     public boolean isValid(Passenger passenger){
         if(passenger.getName().isEmpty() || passenger.getSurname().isEmpty() || passenger.getEmail().isEmpty() || passenger.getLogin().isEmpty() || passenger.getPassword().isEmpty()){
@@ -39,10 +61,11 @@ public class PassengerImpl implements IPassenger {
     }
 
     public PassengerDTO login(List<Passenger> passengerList, String login, String password) {
+        String hashPassword = hashPassword(password);
         List<Passenger> passengers = passengerList
                 .stream()
                 .filter(p -> p.login.equals(login))
-                .filter(p -> p.password.equals(password))
+                .filter(p -> p.password.equals(hashPassword))
                 .collect(Collectors.toList());
         if (passengers.isEmpty()){
             throw new InvalidLoginDataException("Invalid login or password");
