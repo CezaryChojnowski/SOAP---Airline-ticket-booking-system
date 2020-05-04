@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="900">
     <Grid>
-        
+        <Label Content="Wybierz kraj, z którego chcesz lecieć: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="countryFrom" HorizontalAlignment="Left" Margin="223,10,0,0" VerticalAlignment="Top" Width="180" Height="26" SelectionChanged="countryFrom_SelectionChanged"/>
+        <Label Content="Wybierz miasto, z którego chcesz lecieć: " HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="cityFrom" HorizontalAlignment="Left" Margin="223,41,0,0" VerticalAlignment="Top" Width="180" Height="26" SelectionChanged="cityFrom_SelectionChanged"/>
+
+        <Label Content="Wybierz kraj, do którego chcesz lecieć: " HorizontalAlignment="Left" Margin="454,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="countryTo" HorizontalAlignment="Left" Margin="675,10,0,0" VerticalAlignment="Top" Width="180" Height="26" SelectionChanged="countryTo_SelectionChanged"/>
+        <Label Content="Wybierz miasto, do którego chcesz lecieć: " HorizontalAlignment="Left" Margin="436,41,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="cityTo" HorizontalAlignment="Left" Margin="675,41,0,0" VerticalAlignment="Top" Width="180" Height="26" SelectionChanged="cityTo_SelectionChanged"/>
+        <Label Content="Wybierz datę wylotu: " HorizontalAlignment="Left" Margin="93,76,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="date" HorizontalAlignment="Left" Margin="223,77,0,0" VerticalAlignment="Top" Height="29" Width="180"/>
+        <ListView Name="listView" HorizontalAlignment="Left" Height="173" Margin="10,160,0,0" VerticalAlignment="Top" Width="845">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Z lotniska" Width="150" DisplayMemberBinding="{Binding from_AirPort.name}"/>
+                    <GridViewColumn Header="Na lotnisko" Width="150" DisplayMemberBinding="{Binding to_AirPort.name}"/>
+                    <GridViewColumn Header="Data wylotu" Width="120" DisplayMemberBinding="{Binding flightDate}"/>
+                    <GridViewColumn Header="Cena" Width="80" DisplayMemberBinding="{Binding price}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="book" Content="Rezerwuj lot" HorizontalAlignment="Left" Margin="436,379,0,0" VerticalAlignment="Top" Width="75" Click="book_Click"/>
+
     </Grid>
 </Window>

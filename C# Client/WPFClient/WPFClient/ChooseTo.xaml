@@ -1,0 +1,20 @@
+﻿<Page x:Class="WPFClient.ChooseTo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFClient"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChooseTo">
+
+    <Grid>
+        <Label Content="Wybierz kraj, do którego chcesz lecieć: " HorizontalAlignment="Left" Margin="144,124,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="357,124,0,0" VerticalAlignment="Top" Width="180" Height="26"/>
+        <Label Content="Wybierz miasto, do którego chcesz lecieć: " HorizontalAlignment="Left" Margin="128,180,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="357,180,0,0" VerticalAlignment="Top" Width="180" Height="26"/>
+        <Button Content="Dalej" HorizontalAlignment="Left" Margin="357,334,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label Content="Wybierz datę: " HorizontalAlignment="Left" Margin="277,232,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="365,233,0,0" VerticalAlignment="Top" Height="29" Width="172"/>
+    </Grid>
+</Page>
