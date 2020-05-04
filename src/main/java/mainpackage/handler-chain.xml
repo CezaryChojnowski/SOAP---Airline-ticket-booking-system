@@ -4,7 +4,7 @@ xmlns:javaee="http://java.sun.com/xml/ns/javaee"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <javaee:handler-chain>
     <javaee:handler>
-        <javaee:handler-class>handler.AuthenticationValidatiorHandler</javaee:handler-class>
+        <javaee:handler-class>handler.AntiBotHandler</javaee:handler-class>
     </javaee:handler>
 </javaee:handler-chain>
 </javaee:handler-chains>

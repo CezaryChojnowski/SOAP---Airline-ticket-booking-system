@@ -1,6 +1,6 @@
 package handler;
 
-import java.io.IOException;
+
 import java.util.Iterator;
 import java.util.Set;
 import javax.xml.namespace.QName;
@@ -17,66 +17,51 @@ import javax.xml.ws.handler.soap.SOAPHandler;
 import javax.xml.ws.handler.soap.SOAPMessageContext;
 import javax.xml.ws.soap.SOAPFaultException;
 
-public class AuthenticationValidatiorHandler implements SOAPHandler<SOAPMessageContext>{
+public class AntiBotHandler implements SOAPHandler<SOAPMessageContext>{
 
     @Override
     public boolean handleMessage(SOAPMessageContext context) {
 
-        System.out.println("Server : handleMessage()......");
-
         Boolean isRequest = (Boolean) context.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);
 
-        //for response message only, true for outbound messages, false for inbound
         if(!isRequest){
+
 
             try{
                 SOAPMessage soapMsg = context.getMessage();
                 SOAPEnvelope soapEnv = soapMsg.getSOAPPart().getEnvelope();
                 SOAPHeader soapHeader = soapEnv.getHeader();
 
-                //if no header, add one
                 if (soapHeader == null){
                     soapHeader = soapEnv.addHeader();
-                    //throw exception
                     generateSOAPErrMessage(soapMsg, "No SOAP header.");
                 }
 
                 Iterator it = soapHeader.extractHeaderElements(SOAPConstants.URI_SOAP_ACTOR_NEXT);
 
-                //if no header block for next actor found? throw exception
                 if (it == null || !it.hasNext()){
-                    generateSOAPErrMessage(soapMsg, "No header block for next actor.");
+                    generateSOAPErrMessage(soapMsg, "No antiCode block for next actor.");
                 }
 
                 Node node = (Node) it.next();
-                String username = (node == null) ? null : node.getValue();
+                String antiBotCode = (node == null) ? null : node.getValue();
 
-                if (username == null){
-                    generateSOAPErrMessage(soapMsg, "No username in header block.");
+                String afterAntiBotCode = antiBotCode.trim().replace(" ","").replace("  ","");
+
+                if (antiBotCode == null){
+                    generateSOAPErrMessage(soapMsg, "No antiCode in header block.");
                 }
 
-                node = (Node) it.next();
-                String password = (node == null) ? null : node.getValue();
-
-                if(password == null){
-                    generateSOAPErrMessage(soapMsg, "No password in header block.");
+                if(!afterAntiBotCode.equals("HE3X6")){
+                    System.out.println(antiBotCode);
+                    generateSOAPErrMessage(soapMsg, "Invalid code, please try again.");
                 }
-
-                System.out.println("Username: " + username);
-                System.out.println("Password: " + password);
-
-                //tracking
-                soapMsg.writeTo(System.out);
 
             }catch(SOAPException e){
-                System.err.println(e);
-            }catch(IOException e){
                 System.err.println(e);
             }
 
         }
-
-        //continue other handler chain
         return true;
     }
 
