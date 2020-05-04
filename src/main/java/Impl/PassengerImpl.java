@@ -1,6 +1,7 @@
 package Impl;
 
 import dataAccess.IPassenger;
+import error.AllFieldsMustBeCompletedExpcetion;
 import error.InvalidLoginDataException;
 import error.UserWithGivenLoginOrEmailExistsException;
 import model.Passenger;
@@ -23,8 +24,18 @@ public class PassengerImpl implements IPassenger {
         if(!passengers.isEmpty()){
             throw new UserWithGivenLoginOrEmailExistsException("User with the given data exists: login: " + passenger.login + ", email: " + passenger.email + ". Please change login or email");
         }
+        if(!isValid(passenger)){
+            throw new AllFieldsMustBeCompletedExpcetion("All fields must be completed");
+        }
         passengerList.add(passenger);
         return passengerList;
+    }
+
+    public boolean isValid(Passenger passenger){
+        if(passenger.getName().isEmpty() || passenger.getSurname().isEmpty() || passenger.getEmail().isEmpty() || passenger.getLogin().isEmpty() || passenger.getPassword().isEmpty()){
+            return false;
+        }
+        return true;
     }
 
     public PassengerDTO login(List<Passenger> passengerList, String login, String password) {
