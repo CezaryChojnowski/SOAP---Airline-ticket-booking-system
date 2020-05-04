@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace WPFClient
     /// </summary>
     public partial class SummaryView : Window
     {
+        public ticket ticket;
+
         public SummaryView()
         {
             InitializeComponent();
@@ -29,6 +32,7 @@ namespace WPFClient
         {
             InitializeComponent();
             InitFields(ticket);
+            this.ticket = ticket;
         }
 
         private void InitFields(ticket ticket)
@@ -53,7 +57,17 @@ namespace WPFClient
 
         private void SaveTicket_Click(object sender, RoutedEventArgs e)
         {
-
+            try
+            {
+                var byteArray = DataHelper.client.printTicketToPdf(this.ticket);
+                File.WriteAllBytes($"bilet{ticket.code}.pdf", byteArray);
+                MessageBox.Show("Pomyślnie zapisano bilet!", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -18,6 +18,8 @@
   <xs:element name="getAllFlightResponse" type="tns:getAllFlightResponse" />
   <xs:element name="login" type="tns:login" />
   <xs:element name="loginResponse" type="tns:loginResponse" />
+  <xs:element name="printTicketToPdf" type="tns:printTicketToPdf" />
+  <xs:element name="printTicketToPdfResponse" type="tns:printTicketToPdfResponse" />
   <xs:element name="register" type="tns:register" />
   <xs:element name="registerResponse" type="tns:registerResponse" />
   <xs:complexType name="getAllFlight">
@@ -85,6 +87,23 @@
       <xs:element minOccurs="0" name="email" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="printTicketToPdf">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ticket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="flight" type="tns:flight" />
+      <xs:element minOccurs="0" name="passenger" type="tns:passengerDTO" />
+      <xs:element minOccurs="0" name="code" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="printTicketToPdfResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="findAllTheCountriesThatPlanesDepartFrom">
     <xs:sequence />
   </xs:complexType>
@@ -130,13 +149,6 @@
   <xs:complexType name="checkReservationResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:ticket" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ticket">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="flight" type="tns:flight" />
-      <xs:element minOccurs="0" name="passenger" type="tns:passengerDTO" />
-      <xs:element minOccurs="0" name="code" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="findAirPortByCity">
