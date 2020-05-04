@@ -4,10 +4,13 @@ import dataAccess.IPassenger;
 import error.AllFieldsMustBeCompletedExpcetion;
 import error.InvalidLoginDataException;
 import error.UserWithGivenLoginOrEmailExistsException;
+import lombok.SneakyThrows;
 import model.Passenger;
 import DTO.PassengerDTO;
 
 import javax.jws.WebService;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -18,6 +21,7 @@ import java.util.stream.Collectors;
 @WebService(endpointInterface = "dataAccess.IPassenger")
 public class PassengerImpl implements IPassenger {
 
+    @SneakyThrows
     public List<Passenger> register(Passenger passenger, List<Passenger> passengerList) {
         List<Passenger> passengers = passengerList
                 .stream()
@@ -30,10 +34,24 @@ public class PassengerImpl implements IPassenger {
         if(!isValid(passenger)){
             throw new AllFieldsMustBeCompletedExpcetion("All fields must be completed");
         }
+        if(!isValidEmailAddress(passenger.getEmail())){
+            throw new AddressException("Incorrect email address format: " + passenger.getEmail());
+        }
         String hashPassword = hashPassword(passenger.getPassword());
         passenger.setPassword(hashPassword);
         passengerList.add(passenger);
         return passengerList;
+    }
+
+    public static boolean isValidEmailAddress(String email) {
+        boolean result = true;
+        try {
+            InternetAddress emailAddr = new InternetAddress(email);
+            emailAddr.validate();
+        } catch (AddressException ex) {
+            result = false;
+        }
+        return result;
     }
 
     public String hashPassword(String password)
