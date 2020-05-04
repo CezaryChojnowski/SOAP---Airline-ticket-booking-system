@@ -13,6 +13,7 @@ import dataAccess.ITicket;
 import model.*;
 
 import javax.activation.DataHandler;
+import javax.jws.HandlerChain;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.xml.ws.BindingType;
@@ -25,6 +26,7 @@ import java.util.Set;
 @WebService
 @MTOM
 @BindingType(value = SOAPBinding.SOAP11HTTP_MTOM_BINDING)
+@HandlerChain(file= "mainpackage/handler-chain.xml")
 public class TicketBooking {
     AirPortImp airPortImp = new AirPortImp();
     List<Airport> airPortsList = airPortImp.generateAirPortsList();
