@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="TicketBookingService" targetNamespace="http://ws/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="TicketBookingPortBinding_MTOM_Policy">
+    <ns1:OptimizedMimeSerialization xmlns:ns1="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true">
+    </ns1:OptimizedMimeSerialization>
+  </wsp:Policy>
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:9999/ws/TicketBooking?xsd=1" namespace="http://ws/" />
+    </xsd:schema>
+  </types>
+  <message name="register">
+    <part name="parameters" element="tns:register" />
+  </message>
+  <message name="registerResponse">
+    <part name="parameters" element="tns:registerResponse" />
+  </message>
+  <message name="findAllTheCountriesThatPlanesDepartFrom">
+    <part name="parameters" element="tns:findAllTheCountriesThatPlanesDepartFrom" />
+  </message>
+  <message name="findAllTheCountriesThatPlanesDepartFromResponse">
+    <part name="parameters" element="tns:findAllTheCountriesThatPlanesDepartFromResponse" />
+  </message>
+  <message name="findAllCountriesToWhichPlanesDepartFromAgivenCity">
+    <part name="parameters" element="tns:findAllCountriesToWhichPlanesDepartFromAgivenCity" />
+  </message>
+  <message name="findAllCountriesToWhichPlanesDepartFromAgivenCityResponse">
+    <part name="parameters" element="tns:findAllCountriesToWhichPlanesDepartFromAgivenCityResponse" />
+  </message>
+  <message name="BookFlight">
+    <part name="parameters" element="tns:BookFlight" />
+  </message>
+  <message name="BookFlightResponse">
+    <part name="parameters" element="tns:BookFlightResponse" />
+  </message>
+  <message name="login">
+    <part name="parameters" element="tns:login" />
+  </message>
+  <message name="loginResponse">
+    <part name="parameters" element="tns:loginResponse" />
+  </message>
+  <message name="checkReservation">
+    <part name="parameters" element="tns:checkReservation" />
+  </message>
+  <message name="checkReservationResponse">
+    <part name="parameters" element="tns:checkReservationResponse" />
+  </message>
+  <message name="getAllFlight">
+    <part name="parameters" element="tns:getAllFlight" />
+  </message>
+  <message name="getAllFlightResponse">
+    <part name="parameters" element="tns:getAllFlightResponse" />
+  </message>
+  <message name="printTicketToPdf">
+    <part name="parameters" element="tns:printTicketToPdf" />
+  </message>
+  <message name="printTicketToPdfResponse">
+    <part name="parameters" element="tns:printTicketToPdfResponse" />
+  </message>
+  <message name="findAirPortByCountry">
+    <part name="parameters" element="tns:findAirPortByCountry" />
+  </message>
+  <message name="findAirPortByCountryResponse">
+    <part name="parameters" element="tns:findAirPortByCountryResponse" />
+  </message>
+  <message name="findFlightsBetweenGivenCities">
+    <part name="parameters" element="tns:findFlightsBetweenGivenCities" />
+  </message>
+  <message name="findFlightsBetweenGivenCitiesResponse">
+    <part name="parameters" element="tns:findFlightsBetweenGivenCitiesResponse" />
+  </message>
+  <message name="findAirPortByCity">
+    <part name="parameters" element="tns:findAirPortByCity" />
+  </message>
+  <message name="findAirPortByCityResponse">
+    <part name="parameters" element="tns:findAirPortByCityResponse" />
+  </message>
+  <portType name="TicketBooking">
+    <operation name="register">
+      <input wsam:Action="http://ws/TicketBooking/registerRequest" message="tns:register" />
+      <output wsam:Action="http://ws/TicketBooking/registerResponse" message="tns:registerResponse" />
+    </operation>
+    <operation name="findAllTheCountriesThatPlanesDepartFrom">
+      <input wsam:Action="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromRequest" message="tns:findAllTheCountriesThatPlanesDepartFrom" />
+      <output wsam:Action="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromResponse" message="tns:findAllTheCountriesThatPlanesDepartFromResponse" />
+    </operation>
+    <operation name="findAllCountriesToWhichPlanesDepartFromAgivenCity">
+      <input wsam:Action="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityRequest" message="tns:findAllCountriesToWhichPlanesDepartFromAgivenCity" />
+      <output wsam:Action="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityResponse" message="tns:findAllCountriesToWhichPlanesDepartFromAgivenCityResponse" />
+    </operation>
+    <operation name="BookFlight">
+      <input wsam:Action="http://ws/TicketBooking/BookFlightRequest" message="tns:BookFlight" />
+      <output wsam:Action="http://ws/TicketBooking/BookFlightResponse" message="tns:BookFlightResponse" />
+    </operation>
+    <operation name="login">
+      <input wsam:Action="http://ws/TicketBooking/loginRequest" message="tns:login" />
+      <output wsam:Action="http://ws/TicketBooking/loginResponse" message="tns:loginResponse" />
+    </operation>
+    <operation name="checkReservation">
+      <input wsam:Action="http://ws/TicketBooking/checkReservationRequest" message="tns:checkReservation" />
+      <output wsam:Action="http://ws/TicketBooking/checkReservationResponse" message="tns:checkReservationResponse" />
+    </operation>
+    <operation name="getAllFlight">
+      <input wsam:Action="http://ws/TicketBooking/getAllFlightRequest" message="tns:getAllFlight" />
+      <output wsam:Action="http://ws/TicketBooking/getAllFlightResponse" message="tns:getAllFlightResponse" />
+    </operation>
+    <operation name="printTicketToPdf">
+      <input wsam:Action="http://ws/TicketBooking/printTicketToPdfRequest" message="tns:printTicketToPdf" />
+      <output wsam:Action="http://ws/TicketBooking/printTicketToPdfResponse" message="tns:printTicketToPdfResponse" />
+    </operation>
+    <operation name="findAirPortByCountry">
+      <input wsam:Action="http://ws/TicketBooking/findAirPortByCountryRequest" message="tns:findAirPortByCountry" />
+      <output wsam:Action="http://ws/TicketBooking/findAirPortByCountryResponse" message="tns:findAirPortByCountryResponse" />
+    </operation>
+    <operation name="findFlightsBetweenGivenCities">
+      <input wsam:Action="http://ws/TicketBooking/findFlightsBetweenGivenCitiesRequest" message="tns:findFlightsBetweenGivenCities" />
+      <output wsam:Action="http://ws/TicketBooking/findFlightsBetweenGivenCitiesResponse" message="tns:findFlightsBetweenGivenCitiesResponse" />
+    </operation>
+    <operation name="findAirPortByCity">
+      <input wsam:Action="http://ws/TicketBooking/findAirPortByCityRequest" message="tns:findAirPortByCity" />
+      <output wsam:Action="http://ws/TicketBooking/findAirPortByCityResponse" message="tns:findAirPortByCityResponse" />
+    </operation>
+  </portType>
+  <binding name="TicketBookingPortBinding" type="tns:TicketBooking">
+    <wsp:PolicyReference URI="#TicketBookingPortBinding_MTOM_Policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="register">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAllTheCountriesThatPlanesDepartFrom">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAllCountriesToWhichPlanesDepartFromAgivenCity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="BookFlight">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="checkReservation">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getAllFlight">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="printTicketToPdf">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAirPortByCountry">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findFlightsBetweenGivenCities">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAirPortByCity">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TicketBookingService">
+    <port name="TicketBookingPort" binding="tns:TicketBookingPortBinding">
+      <soap:address location="http://localhost:9999/ws/TicketBooking" />
+    </port>
+  </service>
+</definitions>

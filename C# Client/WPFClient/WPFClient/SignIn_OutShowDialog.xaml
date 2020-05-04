@@ -1,0 +1,19 @@
+﻿<Window x:Class="WPFClient.SignIn_OutShowDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFClient"
+        mc:Ignorable="d"
+        Title="Panel logowania" Height="225" Width="300" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="71,32,0,0" TextWrapping="Wrap" Text="Login:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="71,64,0,0" TextWrapping="Wrap" Text="Hasło:" VerticalAlignment="Top"/>
+        <TextBox Name="login" HorizontalAlignment="Left" Height="26" Margin="111,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox Name="password" HorizontalAlignment="Left" Margin="111,54,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Button Name="loginButton" Content="Zaloguj" HorizontalAlignment="Left" Margin="96,101,0,0" VerticalAlignment="Top" Width="106" Click="loginButton_Click" Cursor="Wait"/>
+        <Button Name="register" Content="Zarejestruj się" HorizontalAlignment="Left" Margin="115,147,0,0" VerticalAlignment="Top" Width="160" Click="register_Click"/>
+        <Label Content="Nie masz konta?" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
