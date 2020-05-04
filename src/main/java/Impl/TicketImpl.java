@@ -49,10 +49,16 @@ public class TicketImpl implements ITicket {
     public DataHandler printTicketToPdf(Ticket ticket) {
         PdfWriter writer = null;
         try {
-            writer = new PdfWriter("Potwierdzenie.pdf");
+            writer = new PdfWriter("Ticket.pdf");
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
-            document.add(new Paragraph().add("Ticket: " + ticket));
+            document.add(new Paragraph().add("Origin: " + ticket.getFlight().getFrom_AirPort().getCountry() + ", " + ticket.getFlight().getFrom_AirPort().getCity()));
+            document.add(new Paragraph().add("Departure airport: " + ticket.getFlight().getFrom_AirPort().getName() + ", " + ticket.getFlight().getFrom_AirPort().getStreet() + " " + ticket.getFlight().getFrom_AirPort().getNumer_of_building() + "\n\n"));
+            document.add(new Paragraph().add("Destination: " + ticket.getFlight().getTo_AirPort().getCountry() + ", " + ticket.getFlight().getTo_AirPort().getCity()));
+            document.add(new Paragraph().add("Destination airport: " + ticket.getFlight().getTo_AirPort().getName() + ", " + ticket.getFlight().getTo_AirPort().getStreet() + " " + ticket.getFlight().getTo_AirPort().getNumer_of_building() + "\n\n"));
+            document.add(new Paragraph().add("Flight date: " + ticket.getFlight().getFlightDate() + "\n\n\n"));
+            document.add(new Paragraph().add("Ticket code: " + ticket.getCode()));
+
             document.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
