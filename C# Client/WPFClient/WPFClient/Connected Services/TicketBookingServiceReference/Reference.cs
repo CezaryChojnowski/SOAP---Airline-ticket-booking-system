@@ -25,22 +25,24 @@ namespace WPFClient.TicketBookingServiceReference {
         System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.registerResponse> registerAsync(WPFClient.TicketBookingServiceReference.registerRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findFlightsBetweenGivenCitiesRequest", ReplyAction="http://ws/TicketBooking/findFlightsBetweenGivenCitiesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromRequest", ReplyAction="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse findFlightsBetweenGivenCities(WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest request);
+        WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse findAllTheCountriesThatPlanesDepartFrom(WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findFlightsBetweenGivenCitiesRequest", ReplyAction="http://ws/TicketBooking/findFlightsBetweenGivenCitiesResponse")]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse> findFlightsBetweenGivenCitiesAsync(WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromRequest", ReplyAction="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromResponse")]
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse> findAllTheCountriesThatPlanesDepartFromAsync(WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/checkReservationRequest", ReplyAction="http://ws/TicketBooking/checkReservationResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityRequest", ReplyAction="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityResponse" +
+            "")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WPFClient.TicketBookingServiceReference.checkReservationResponse checkReservation(WPFClient.TicketBookingServiceReference.checkReservationRequest request);
+        WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse findAllCountriesToWhichPlanesDepartFromAgivenCity(WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/checkReservationRequest", ReplyAction="http://ws/TicketBooking/checkReservationResponse")]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.checkReservationResponse> checkReservationAsync(WPFClient.TicketBookingServiceReference.checkReservationRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityRequest", ReplyAction="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityResponse" +
+            "")]
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse> findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/BookFlightRequest", ReplyAction="http://ws/TicketBooking/BookFlightResponse")]
@@ -61,6 +63,15 @@ namespace WPFClient.TicketBookingServiceReference {
         System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.loginResponse> loginAsync(WPFClient.TicketBookingServiceReference.loginRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/checkReservationRequest", ReplyAction="http://ws/TicketBooking/checkReservationResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WPFClient.TicketBookingServiceReference.checkReservationResponse checkReservation(WPFClient.TicketBookingServiceReference.checkReservationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/checkReservationRequest", ReplyAction="http://ws/TicketBooking/checkReservationResponse")]
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.checkReservationResponse> checkReservationAsync(WPFClient.TicketBookingServiceReference.checkReservationRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/getAllFlightRequest", ReplyAction="http://ws/TicketBooking/getAllFlightResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -70,24 +81,13 @@ namespace WPFClient.TicketBookingServiceReference {
         System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.getAllFlightResponse> getAllFlightAsync(WPFClient.TicketBookingServiceReference.getAllFlightRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityRequest", ReplyAction="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityResponse" +
-            "")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/printTicketToPdfRequest", ReplyAction="http://ws/TicketBooking/printTicketToPdfResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse findAllCountriesToWhichPlanesDepartFromAgivenCity(WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest request);
+        WPFClient.TicketBookingServiceReference.printTicketToPdfResponse printTicketToPdf(WPFClient.TicketBookingServiceReference.printTicketToPdfRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityRequest", ReplyAction="http://ws/TicketBooking/findAllCountriesToWhichPlanesDepartFromAgivenCityResponse" +
-            "")]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse> findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAirPortByCityRequest", ReplyAction="http://ws/TicketBooking/findAirPortByCityResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WPFClient.TicketBookingServiceReference.findAirPortByCityResponse findAirPortByCity(WPFClient.TicketBookingServiceReference.findAirPortByCityRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAirPortByCityRequest", ReplyAction="http://ws/TicketBooking/findAirPortByCityResponse")]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAirPortByCityResponse> findAirPortByCityAsync(WPFClient.TicketBookingServiceReference.findAirPortByCityRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/printTicketToPdfRequest", ReplyAction="http://ws/TicketBooking/printTicketToPdfResponse")]
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.printTicketToPdfResponse> printTicketToPdfAsync(WPFClient.TicketBookingServiceReference.printTicketToPdfRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAirPortByCountryRequest", ReplyAction="http://ws/TicketBooking/findAirPortByCountryResponse")]
@@ -99,13 +99,22 @@ namespace WPFClient.TicketBookingServiceReference {
         System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAirPortByCountryResponse> findAirPortByCountryAsync(WPFClient.TicketBookingServiceReference.findAirPortByCountryRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromRequest", ReplyAction="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findFlightsBetweenGivenCitiesRequest", ReplyAction="http://ws/TicketBooking/findFlightsBetweenGivenCitiesResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse findAllTheCountriesThatPlanesDepartFrom(WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest request);
+        WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse findFlightsBetweenGivenCities(WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromRequest", ReplyAction="http://ws/TicketBooking/findAllTheCountriesThatPlanesDepartFromResponse")]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse> findAllTheCountriesThatPlanesDepartFromAsync(WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findFlightsBetweenGivenCitiesRequest", ReplyAction="http://ws/TicketBooking/findFlightsBetweenGivenCitiesResponse")]
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse> findFlightsBetweenGivenCitiesAsync(WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAirPortByCityRequest", ReplyAction="http://ws/TicketBooking/findAirPortByCityResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WPFClient.TicketBookingServiceReference.findAirPortByCityResponse findAirPortByCity(WPFClient.TicketBookingServiceReference.findAirPortByCityRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws/TicketBooking/findAirPortByCityRequest", ReplyAction="http://ws/TicketBooking/findAirPortByCityResponse")]
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAirPortByCityResponse> findAirPortByCityAsync(WPFClient.TicketBookingServiceReference.findAirPortByCityRequest request);
     }
     
     /// <remarks/>
@@ -183,144 +192,6 @@ namespace WPFClient.TicketBookingServiceReference {
             set {
                 this.passwordField = value;
                 this.RaisePropertyChanged("password");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws/")]
-    public partial class cityDTO : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string nameField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws/")]
-    public partial class countryDTO : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string nameField;
-        
-        private cityDTO[] citiesListField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("citiesList", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
-        public cityDTO[] citiesList {
-            get {
-                return this.citiesListField;
-            }
-            set {
-                this.citiesListField = value;
-                this.RaisePropertyChanged("citiesList");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws/")]
-    public partial class passengerDTO : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private string nameField;
-        
-        private string surnameField;
-        
-        private string emailField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public string name {
-            get {
-                return this.nameField;
-            }
-            set {
-                this.nameField = value;
-                this.RaisePropertyChanged("name");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string surname {
-            get {
-                return this.surnameField;
-            }
-            set {
-                this.surnameField = value;
-                this.RaisePropertyChanged("surname");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string email {
-            get {
-                return this.emailField;
-            }
-            set {
-                this.emailField = value;
-                this.RaisePropertyChanged("email");
             }
         }
         
@@ -570,6 +441,144 @@ namespace WPFClient.TicketBookingServiceReference {
         }
     }
     
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws/")]
+    public partial class passengerDTO : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string nameField;
+        
+        private string surnameField;
+        
+        private string emailField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string surname {
+            get {
+                return this.surnameField;
+            }
+            set {
+                this.surnameField = value;
+                this.RaisePropertyChanged("surname");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("email");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws/")]
+    public partial class cityDTO : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3761.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://ws/")]
+    public partial class countryDTO : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string nameField;
+        
+        private cityDTO[] citiesListField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+                this.RaisePropertyChanged("name");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("citiesList", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=1)]
+        public cityDTO[] citiesList {
+            get {
+                return this.citiesListField;
+            }
+            set {
+                this.citiesListField = value;
+                this.RaisePropertyChanged("citiesList");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -609,8 +618,36 @@ namespace WPFClient.TicketBookingServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findFlightsBetweenGivenCities", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class findFlightsBetweenGivenCitiesRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findAllTheCountriesThatPlanesDepartFrom", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class findAllTheCountriesThatPlanesDepartFromRequest {
+        
+        public findAllTheCountriesThatPlanesDepartFromRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findAllTheCountriesThatPlanesDepartFromResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class findAllTheCountriesThatPlanesDepartFromResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WPFClient.TicketBookingServiceReference.countryDTO[] @return;
+        
+        public findAllTheCountriesThatPlanesDepartFromResponse() {
+        }
+        
+        public findAllTheCountriesThatPlanesDepartFromResponse(WPFClient.TicketBookingServiceReference.countryDTO[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findAllCountriesToWhichPlanesDepartFromAgivenCity", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class findAllCountriesToWhichPlanesDepartFromAgivenCityRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -620,80 +657,29 @@ namespace WPFClient.TicketBookingServiceReference {
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public string arg1;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=2)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg2;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=3)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg3;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=4)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg4;
-        
-        public findFlightsBetweenGivenCitiesRequest() {
+        public findAllCountriesToWhichPlanesDepartFromAgivenCityRequest() {
         }
         
-        public findFlightsBetweenGivenCitiesRequest(string arg0, string arg1, string arg2, string arg3, string arg4) {
+        public findAllCountriesToWhichPlanesDepartFromAgivenCityRequest(string arg0, string arg1) {
             this.arg0 = arg0;
             this.arg1 = arg1;
-            this.arg2 = arg2;
-            this.arg3 = arg3;
-            this.arg4 = arg4;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findFlightsBetweenGivenCitiesResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class findFlightsBetweenGivenCitiesResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findAllCountriesToWhichPlanesDepartFromAgivenCityResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class findAllCountriesToWhichPlanesDepartFromAgivenCityResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WPFClient.TicketBookingServiceReference.flight[] @return;
+        public WPFClient.TicketBookingServiceReference.countryDTO[] @return;
         
-        public findFlightsBetweenGivenCitiesResponse() {
+        public findAllCountriesToWhichPlanesDepartFromAgivenCityResponse() {
         }
         
-        public findFlightsBetweenGivenCitiesResponse(WPFClient.TicketBookingServiceReference.flight[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="checkReservation", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class checkReservationRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int arg0;
-        
-        public checkReservationRequest() {
-        }
-        
-        public checkReservationRequest(int arg0) {
-            this.arg0 = arg0;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="checkReservationResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class checkReservationResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WPFClient.TicketBookingServiceReference.ticket @return;
-        
-        public checkReservationResponse() {
-        }
-        
-        public checkReservationResponse(WPFClient.TicketBookingServiceReference.ticket @return) {
+        public findAllCountriesToWhichPlanesDepartFromAgivenCityResponse(WPFClient.TicketBookingServiceReference.countryDTO[] @return) {
             this.@return = @return;
         }
     }
@@ -783,6 +769,42 @@ namespace WPFClient.TicketBookingServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="checkReservation", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class checkReservationRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int arg0;
+        
+        public checkReservationRequest() {
+        }
+        
+        public checkReservationRequest(int arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="checkReservationResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class checkReservationResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WPFClient.TicketBookingServiceReference.ticket @return;
+        
+        public checkReservationResponse() {
+        }
+        
+        public checkReservationResponse(WPFClient.TicketBookingServiceReference.ticket @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="getAllFlight", WrapperNamespace="http://ws/", IsWrapped=true)]
     public partial class getAllFlightRequest {
         
@@ -811,58 +833,17 @@ namespace WPFClient.TicketBookingServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findAllCountriesToWhichPlanesDepartFromAgivenCity", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class findAllCountriesToWhichPlanesDepartFromAgivenCityRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="printTicketToPdf", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class printTicketToPdfRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
+        public WPFClient.TicketBookingServiceReference.ticket arg0;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg1;
-        
-        public findAllCountriesToWhichPlanesDepartFromAgivenCityRequest() {
+        public printTicketToPdfRequest() {
         }
         
-        public findAllCountriesToWhichPlanesDepartFromAgivenCityRequest(string arg0, string arg1) {
-            this.arg0 = arg0;
-            this.arg1 = arg1;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findAllCountriesToWhichPlanesDepartFromAgivenCityResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class findAllCountriesToWhichPlanesDepartFromAgivenCityResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WPFClient.TicketBookingServiceReference.countryDTO[] @return;
-        
-        public findAllCountriesToWhichPlanesDepartFromAgivenCityResponse() {
-        }
-        
-        public findAllCountriesToWhichPlanesDepartFromAgivenCityResponse(WPFClient.TicketBookingServiceReference.countryDTO[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findAirPortByCity", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class findAirPortByCityRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string arg0;
-        
-        public findAirPortByCityRequest() {
-        }
-        
-        public findAirPortByCityRequest(string arg0) {
+        public printTicketToPdfRequest(WPFClient.TicketBookingServiceReference.ticket arg0) {
             this.arg0 = arg0;
         }
     }
@@ -870,17 +851,17 @@ namespace WPFClient.TicketBookingServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findAirPortByCityResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class findAirPortByCityResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="printTicketToPdfResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class printTicketToPdfResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WPFClient.TicketBookingServiceReference.airport[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary")]
+        public byte[] @return;
         
-        public findAirPortByCityResponse() {
+        public printTicketToPdfResponse() {
         }
         
-        public findAirPortByCityResponse(WPFClient.TicketBookingServiceReference.airport[] @return) {
+        public printTicketToPdfResponse(byte[] @return) {
             this.@return = @return;
         }
     }
@@ -924,27 +905,91 @@ namespace WPFClient.TicketBookingServiceReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findAllTheCountriesThatPlanesDepartFrom", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class findAllTheCountriesThatPlanesDepartFromRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findFlightsBetweenGivenCities", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class findFlightsBetweenGivenCitiesRequest {
         
-        public findAllTheCountriesThatPlanesDepartFromRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg1;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg2;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg3;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg4;
+        
+        public findFlightsBetweenGivenCitiesRequest() {
+        }
+        
+        public findFlightsBetweenGivenCitiesRequest(string arg0, string arg1, string arg2, string arg3, string arg4) {
+            this.arg0 = arg0;
+            this.arg1 = arg1;
+            this.arg2 = arg2;
+            this.arg3 = arg3;
+            this.arg4 = arg4;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="findAllTheCountriesThatPlanesDepartFromResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
-    public partial class findAllTheCountriesThatPlanesDepartFromResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findFlightsBetweenGivenCitiesResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class findFlightsBetweenGivenCitiesResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public WPFClient.TicketBookingServiceReference.countryDTO[] @return;
+        public WPFClient.TicketBookingServiceReference.flight[] @return;
         
-        public findAllTheCountriesThatPlanesDepartFromResponse() {
+        public findFlightsBetweenGivenCitiesResponse() {
         }
         
-        public findAllTheCountriesThatPlanesDepartFromResponse(WPFClient.TicketBookingServiceReference.countryDTO[] @return) {
+        public findFlightsBetweenGivenCitiesResponse(WPFClient.TicketBookingServiceReference.flight[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findAirPortByCity", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class findAirPortByCityRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string arg0;
+        
+        public findAirPortByCityRequest() {
+        }
+        
+        public findAirPortByCityRequest(string arg0) {
+            this.arg0 = arg0;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="findAirPortByCityResponse", WrapperNamespace="http://ws/", IsWrapped=true)]
+    public partial class findAirPortByCityResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public WPFClient.TicketBookingServiceReference.airport[] @return;
+        
+        public findAirPortByCityResponse() {
+        }
+        
+        public findAirPortByCityResponse(WPFClient.TicketBookingServiceReference.airport[] @return) {
             this.@return = @return;
         }
     }
@@ -1000,57 +1045,49 @@ namespace WPFClient.TicketBookingServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse WPFClient.TicketBookingServiceReference.TicketBooking.findFlightsBetweenGivenCities(WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest request) {
-            return base.Channel.findFlightsBetweenGivenCities(request);
+        WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse WPFClient.TicketBookingServiceReference.TicketBooking.findAllTheCountriesThatPlanesDepartFrom(WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest request) {
+            return base.Channel.findAllTheCountriesThatPlanesDepartFrom(request);
         }
         
-        public WPFClient.TicketBookingServiceReference.flight[] findFlightsBetweenGivenCities(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest inValue = new WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findFlightsBetweenGivenCities(inValue);
+        public WPFClient.TicketBookingServiceReference.countryDTO[] findAllTheCountriesThatPlanesDepartFrom() {
+            WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest inValue = new WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest();
+            WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAllTheCountriesThatPlanesDepartFrom(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse> WPFClient.TicketBookingServiceReference.TicketBooking.findFlightsBetweenGivenCitiesAsync(WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest request) {
-            return base.Channel.findFlightsBetweenGivenCitiesAsync(request);
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse> WPFClient.TicketBookingServiceReference.TicketBooking.findAllTheCountriesThatPlanesDepartFromAsync(WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest request) {
+            return base.Channel.findAllTheCountriesThatPlanesDepartFromAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse> findFlightsBetweenGivenCitiesAsync(string arg0, string arg1, string arg2, string arg3, string arg4) {
-            WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest inValue = new WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest();
-            inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            inValue.arg2 = arg2;
-            inValue.arg3 = arg3;
-            inValue.arg4 = arg4;
-            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findFlightsBetweenGivenCitiesAsync(inValue);
+        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse> findAllTheCountriesThatPlanesDepartFromAsync() {
+            WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest inValue = new WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest();
+            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAllTheCountriesThatPlanesDepartFromAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WPFClient.TicketBookingServiceReference.checkReservationResponse WPFClient.TicketBookingServiceReference.TicketBooking.checkReservation(WPFClient.TicketBookingServiceReference.checkReservationRequest request) {
-            return base.Channel.checkReservation(request);
+        WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse WPFClient.TicketBookingServiceReference.TicketBooking.findAllCountriesToWhichPlanesDepartFromAgivenCity(WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest request) {
+            return base.Channel.findAllCountriesToWhichPlanesDepartFromAgivenCity(request);
         }
         
-        public WPFClient.TicketBookingServiceReference.ticket checkReservation(int arg0) {
-            WPFClient.TicketBookingServiceReference.checkReservationRequest inValue = new WPFClient.TicketBookingServiceReference.checkReservationRequest();
+        public WPFClient.TicketBookingServiceReference.countryDTO[] findAllCountriesToWhichPlanesDepartFromAgivenCity(string arg0, string arg1) {
+            WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest inValue = new WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest();
             inValue.arg0 = arg0;
-            WPFClient.TicketBookingServiceReference.checkReservationResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).checkReservation(inValue);
+            inValue.arg1 = arg1;
+            WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAllCountriesToWhichPlanesDepartFromAgivenCity(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.checkReservationResponse> WPFClient.TicketBookingServiceReference.TicketBooking.checkReservationAsync(WPFClient.TicketBookingServiceReference.checkReservationRequest request) {
-            return base.Channel.checkReservationAsync(request);
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse> WPFClient.TicketBookingServiceReference.TicketBooking.findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest request) {
+            return base.Channel.findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.checkReservationResponse> checkReservationAsync(int arg0) {
-            WPFClient.TicketBookingServiceReference.checkReservationRequest inValue = new WPFClient.TicketBookingServiceReference.checkReservationRequest();
+        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse> findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(string arg0, string arg1) {
+            WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest inValue = new WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest();
             inValue.arg0 = arg0;
-            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).checkReservationAsync(inValue);
+            inValue.arg1 = arg1;
+            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1104,6 +1141,29 @@ namespace WPFClient.TicketBookingServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WPFClient.TicketBookingServiceReference.checkReservationResponse WPFClient.TicketBookingServiceReference.TicketBooking.checkReservation(WPFClient.TicketBookingServiceReference.checkReservationRequest request) {
+            return base.Channel.checkReservation(request);
+        }
+        
+        public WPFClient.TicketBookingServiceReference.ticket checkReservation(int arg0) {
+            WPFClient.TicketBookingServiceReference.checkReservationRequest inValue = new WPFClient.TicketBookingServiceReference.checkReservationRequest();
+            inValue.arg0 = arg0;
+            WPFClient.TicketBookingServiceReference.checkReservationResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).checkReservation(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.checkReservationResponse> WPFClient.TicketBookingServiceReference.TicketBooking.checkReservationAsync(WPFClient.TicketBookingServiceReference.checkReservationRequest request) {
+            return base.Channel.checkReservationAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.checkReservationResponse> checkReservationAsync(int arg0) {
+            WPFClient.TicketBookingServiceReference.checkReservationRequest inValue = new WPFClient.TicketBookingServiceReference.checkReservationRequest();
+            inValue.arg0 = arg0;
+            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).checkReservationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WPFClient.TicketBookingServiceReference.getAllFlightResponse WPFClient.TicketBookingServiceReference.TicketBooking.getAllFlight(WPFClient.TicketBookingServiceReference.getAllFlightRequest request) {
             return base.Channel.getAllFlight(request);
         }
@@ -1125,51 +1185,26 @@ namespace WPFClient.TicketBookingServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse WPFClient.TicketBookingServiceReference.TicketBooking.findAllCountriesToWhichPlanesDepartFromAgivenCity(WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest request) {
-            return base.Channel.findAllCountriesToWhichPlanesDepartFromAgivenCity(request);
+        WPFClient.TicketBookingServiceReference.printTicketToPdfResponse WPFClient.TicketBookingServiceReference.TicketBooking.printTicketToPdf(WPFClient.TicketBookingServiceReference.printTicketToPdfRequest request) {
+            return base.Channel.printTicketToPdf(request);
         }
         
-        public WPFClient.TicketBookingServiceReference.countryDTO[] findAllCountriesToWhichPlanesDepartFromAgivenCity(string arg0, string arg1) {
-            WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest inValue = new WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest();
+        public byte[] printTicketToPdf(WPFClient.TicketBookingServiceReference.ticket arg0) {
+            WPFClient.TicketBookingServiceReference.printTicketToPdfRequest inValue = new WPFClient.TicketBookingServiceReference.printTicketToPdfRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAllCountriesToWhichPlanesDepartFromAgivenCity(inValue);
+            WPFClient.TicketBookingServiceReference.printTicketToPdfResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).printTicketToPdf(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse> WPFClient.TicketBookingServiceReference.TicketBooking.findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest request) {
-            return base.Channel.findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(request);
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.printTicketToPdfResponse> WPFClient.TicketBookingServiceReference.TicketBooking.printTicketToPdfAsync(WPFClient.TicketBookingServiceReference.printTicketToPdfRequest request) {
+            return base.Channel.printTicketToPdfAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityResponse> findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(string arg0, string arg1) {
-            WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest inValue = new WPFClient.TicketBookingServiceReference.findAllCountriesToWhichPlanesDepartFromAgivenCityRequest();
+        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.printTicketToPdfResponse> printTicketToPdfAsync(WPFClient.TicketBookingServiceReference.ticket arg0) {
+            WPFClient.TicketBookingServiceReference.printTicketToPdfRequest inValue = new WPFClient.TicketBookingServiceReference.printTicketToPdfRequest();
             inValue.arg0 = arg0;
-            inValue.arg1 = arg1;
-            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WPFClient.TicketBookingServiceReference.findAirPortByCityResponse WPFClient.TicketBookingServiceReference.TicketBooking.findAirPortByCity(WPFClient.TicketBookingServiceReference.findAirPortByCityRequest request) {
-            return base.Channel.findAirPortByCity(request);
-        }
-        
-        public WPFClient.TicketBookingServiceReference.airport[] findAirPortByCity(string arg0) {
-            WPFClient.TicketBookingServiceReference.findAirPortByCityRequest inValue = new WPFClient.TicketBookingServiceReference.findAirPortByCityRequest();
-            inValue.arg0 = arg0;
-            WPFClient.TicketBookingServiceReference.findAirPortByCityResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAirPortByCity(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAirPortByCityResponse> WPFClient.TicketBookingServiceReference.TicketBooking.findAirPortByCityAsync(WPFClient.TicketBookingServiceReference.findAirPortByCityRequest request) {
-            return base.Channel.findAirPortByCityAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAirPortByCityResponse> findAirPortByCityAsync(string arg0) {
-            WPFClient.TicketBookingServiceReference.findAirPortByCityRequest inValue = new WPFClient.TicketBookingServiceReference.findAirPortByCityRequest();
-            inValue.arg0 = arg0;
-            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAirPortByCityAsync(inValue);
+            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).printTicketToPdfAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1196,24 +1231,57 @@ namespace WPFClient.TicketBookingServiceReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse WPFClient.TicketBookingServiceReference.TicketBooking.findAllTheCountriesThatPlanesDepartFrom(WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest request) {
-            return base.Channel.findAllTheCountriesThatPlanesDepartFrom(request);
+        WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse WPFClient.TicketBookingServiceReference.TicketBooking.findFlightsBetweenGivenCities(WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest request) {
+            return base.Channel.findFlightsBetweenGivenCities(request);
         }
         
-        public WPFClient.TicketBookingServiceReference.countryDTO[] findAllTheCountriesThatPlanesDepartFrom() {
-            WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest inValue = new WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest();
-            WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAllTheCountriesThatPlanesDepartFrom(inValue);
+        public WPFClient.TicketBookingServiceReference.flight[] findFlightsBetweenGivenCities(string arg0, string arg1, string arg2, string arg3, string arg4) {
+            WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest inValue = new WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findFlightsBetweenGivenCities(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse> WPFClient.TicketBookingServiceReference.TicketBooking.findAllTheCountriesThatPlanesDepartFromAsync(WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest request) {
-            return base.Channel.findAllTheCountriesThatPlanesDepartFromAsync(request);
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse> WPFClient.TicketBookingServiceReference.TicketBooking.findFlightsBetweenGivenCitiesAsync(WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest request) {
+            return base.Channel.findFlightsBetweenGivenCitiesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromResponse> findAllTheCountriesThatPlanesDepartFromAsync() {
-            WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest inValue = new WPFClient.TicketBookingServiceReference.findAllTheCountriesThatPlanesDepartFromRequest();
-            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAllTheCountriesThatPlanesDepartFromAsync(inValue);
+        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesResponse> findFlightsBetweenGivenCitiesAsync(string arg0, string arg1, string arg2, string arg3, string arg4) {
+            WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest inValue = new WPFClient.TicketBookingServiceReference.findFlightsBetweenGivenCitiesRequest();
+            inValue.arg0 = arg0;
+            inValue.arg1 = arg1;
+            inValue.arg2 = arg2;
+            inValue.arg3 = arg3;
+            inValue.arg4 = arg4;
+            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findFlightsBetweenGivenCitiesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WPFClient.TicketBookingServiceReference.findAirPortByCityResponse WPFClient.TicketBookingServiceReference.TicketBooking.findAirPortByCity(WPFClient.TicketBookingServiceReference.findAirPortByCityRequest request) {
+            return base.Channel.findAirPortByCity(request);
+        }
+        
+        public WPFClient.TicketBookingServiceReference.airport[] findAirPortByCity(string arg0) {
+            WPFClient.TicketBookingServiceReference.findAirPortByCityRequest inValue = new WPFClient.TicketBookingServiceReference.findAirPortByCityRequest();
+            inValue.arg0 = arg0;
+            WPFClient.TicketBookingServiceReference.findAirPortByCityResponse retVal = ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAirPortByCity(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAirPortByCityResponse> WPFClient.TicketBookingServiceReference.TicketBooking.findAirPortByCityAsync(WPFClient.TicketBookingServiceReference.findAirPortByCityRequest request) {
+            return base.Channel.findAirPortByCityAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WPFClient.TicketBookingServiceReference.findAirPortByCityResponse> findAirPortByCityAsync(string arg0) {
+            WPFClient.TicketBookingServiceReference.findAirPortByCityRequest inValue = new WPFClient.TicketBookingServiceReference.findAirPortByCityRequest();
+            inValue.arg0 = arg0;
+            return ((WPFClient.TicketBookingServiceReference.TicketBooking)(this)).findAirPortByCityAsync(inValue);
         }
     }
 }

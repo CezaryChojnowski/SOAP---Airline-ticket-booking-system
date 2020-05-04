@@ -44,10 +44,7 @@ namespace WPFClient
             RegisterView registerView = new RegisterView();
 
             this.Close();
-            if (registerView.ShowDialog() == true)
-            {
-                DialogResult = true;
-            }
+            registerView.ShowDialog();
         }
     }
 }
