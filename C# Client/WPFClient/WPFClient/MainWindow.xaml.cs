@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WPFClient.TicketBookingServiceReference;
 
 namespace WPFClient
@@ -30,13 +20,22 @@ namespace WPFClient
             InitializeComponent();
 
             client = new TicketBookingClient();
+            DataHelper.client = client;
 
-            countryDTOs = client.findAllTheCountriesThatPlanesDepartFrom();
-
-            foreach (var item in countryDTOs)
+            try
             {
-                this.countryFrom.Items.Add(item.name);
+                countryDTOs = client.findAllTheCountriesThatPlanesDepartFrom();
+
+                foreach (var item in countryDTOs)
+                {
+                    this.countryFrom.Items.Add(item.name);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }  
         }
 
         private void countryFrom_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -56,18 +55,26 @@ namespace WPFClient
             }
         }
 
-        private void cityFrom_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void cityFrom_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             this.countryTo.SelectedItem = null;
             this.countryTo.Items.Clear();
 
             if (this.cityFrom.SelectedItem != null)
             {
-                this.countriesTo = this.client.findAllCountriesToWhichPlanesDepartFromAgivenCity(this.countryFrom.SelectedItem.ToString(), this.cityFrom.SelectedItem.ToString());
-
-                foreach (var item in this.countriesTo)
+                try
                 {
-                    this.countryTo.Items.Add(item.name);
+                    var countries = await this.client.findAllCountriesToWhichPlanesDepartFromAgivenCityAsync(this.countryFrom.SelectedItem.ToString(), this.cityFrom.SelectedItem.ToString());
+                    this.countriesTo = countries.@return;
+
+                    foreach (var item in this.countriesTo)
+                    {
+                        this.countryTo.Items.Add(item.name);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -89,12 +96,12 @@ namespace WPFClient
             }
         }
 
-        private void cityTo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void cityTo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ShowPotencialOptions();
+            await ShowPotencialOptions();
         }
 
-        public void ShowPotencialOptions()
+        public async Task ShowPotencialOptions()
         {
             if (this.countryFrom.SelectedItem != null && this.cityFrom.SelectedItem != null 
                 && this.countryTo.SelectedItem != null && this.cityTo.SelectedItem != null && this.date.SelectedDate != null)
@@ -102,13 +109,13 @@ namespace WPFClient
                 try
                 {
                     var date = Convert.ToDateTime(this.date.Text).ToString("dd-MM-yyyy");
-                    var lista = this.client.findFlightsBetweenGivenCities(this.countryFrom.SelectedItem.ToString(),
+                    var list = await this.client.findFlightsBetweenGivenCitiesAsync(this.countryFrom.SelectedItem.ToString(),
                                                                       this.cityFrom.SelectedItem.ToString(),
                                                                       this.countryTo.SelectedItem.ToString(),
                                                                       this.cityTo.SelectedItem.ToString(),
                                                                       date);
 
-                    this.listView.ItemsSource = lista;
+                    this.listView.ItemsSource = list.@return;
                 }
                 catch (Exception e)
                 {
@@ -117,14 +124,44 @@ namespace WPFClient
             }
         }
 
-        private void book_Click(object sender, RoutedEventArgs e)
+        private async void book_Click(object sender, RoutedEventArgs e)
         {
-            var x = (flight)this.listView.SelectedItem;
+            var flight = (flight)this.listView.SelectedItem;
 
-            if (x != null)
+            if (flight != null)
             {
                 SignIn_OutShowDialog showDialog = new SignIn_OutShowDialog();
                 showDialog.ShowDialog();
+            }
+
+            try
+            {
+                var ticket = await this.client.BookFlightAsync(flight, DataHelper.loggedUser);
+
+                SummaryView summaryView = new SummaryView(ticket.@return);
+                summaryView.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async void SearchTicket_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(this.ticketCode.Text) && int.TryParse(this.ticketCode.Text, out int result))
+            {
+                try
+                {
+                    var ticket = await this.client.checkReservationAsync(result);
+
+                    SummaryView summaryView = new SummaryView(ticket.@return);
+                    summaryView.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

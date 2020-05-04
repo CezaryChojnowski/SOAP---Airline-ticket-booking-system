@@ -3,32 +3,67 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WPFClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="900">
+        Title="MainWindow" Height="600" Width="900" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Wybierz kraj, z którego chcesz lecieć: " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="countryFrom" HorizontalAlignment="Left" Margin="223,10,0,0" VerticalAlignment="Top" Width="180" Height="26" SelectionChanged="countryFrom_SelectionChanged"/>
-        <Label Content="Wybierz miasto, z którego chcesz lecieć: " HorizontalAlignment="Left" Margin="0,41,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="cityFrom" HorizontalAlignment="Left" Margin="223,41,0,0" VerticalAlignment="Top" Width="180" Height="26" SelectionChanged="cityFrom_SelectionChanged"/>
+        <Button Name="book" Content="Rezerwuj lot" HorizontalAlignment="Left" Margin="343,510,0,0" VerticalAlignment="Top" Width="208" Click="book_Click" Height="45"/>
+        <GroupBox Header="Miejsce wylotu" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" FontWeight="Bold" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="398" Margin="10,123,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Wybierz kraj:"/>
+                <Label Grid.Row="1" Content="Wybierz miasto:" />
+                <Label Grid.Row="2" Content="Wybierz datę wylotu:" />
 
-        <Label Content="Wybierz kraj, do którego chcesz lecieć: " HorizontalAlignment="Left" Margin="454,10,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="countryTo" HorizontalAlignment="Left" Margin="675,10,0,0" VerticalAlignment="Top" Width="180" Height="26" SelectionChanged="countryTo_SelectionChanged"/>
-        <Label Content="Wybierz miasto, do którego chcesz lecieć: " HorizontalAlignment="Left" Margin="436,41,0,0" VerticalAlignment="Top"/>
-        <ComboBox Name="cityTo" HorizontalAlignment="Left" Margin="675,41,0,0" VerticalAlignment="Top" Width="180" Height="26" SelectionChanged="cityTo_SelectionChanged"/>
-        <Label Content="Wybierz datę wylotu: " HorizontalAlignment="Left" Margin="93,76,0,0" VerticalAlignment="Top"/>
-        <DatePicker Name="date" HorizontalAlignment="Left" Margin="223,77,0,0" VerticalAlignment="Top" Height="29" Width="180"/>
-        <ListView Name="listView" HorizontalAlignment="Left" Height="173" Margin="10,160,0,0" VerticalAlignment="Top" Width="845">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Z lotniska" Width="150" DisplayMemberBinding="{Binding from_AirPort.name}"/>
-                    <GridViewColumn Header="Na lotnisko" Width="150" DisplayMemberBinding="{Binding to_AirPort.name}"/>
-                    <GridViewColumn Header="Data wylotu" Width="120" DisplayMemberBinding="{Binding flightDate}"/>
-                    <GridViewColumn Header="Cena" Width="80" DisplayMemberBinding="{Binding price}"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Name="book" Content="Rezerwuj lot" HorizontalAlignment="Left" Margin="436,379,0,0" VerticalAlignment="Top" Width="75" Click="book_Click"/>
-
+                <ComboBox Grid.Column="1" Name="countryFrom" SelectionChanged="countryFrom_SelectionChanged"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" Name="cityFrom" SelectionChanged="cityFrom_SelectionChanged"/>
+                <DatePicker Grid.Row="2" Grid.Column="1" Name="date"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Miejsce przylotu" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" FontWeight="Bold" HorizontalAlignment="Left" Height="155" Margin="436,123,0,0" VerticalAlignment="Top" Width="448">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Label Content="Wybierz kraj:"/>
+                <Label Grid.Row="1" Content="Wybierz miasto:" />
+                <ComboBox Grid.Column="1" Name="countryTo" SelectionChanged="countryTo_SelectionChanged"/>
+                <ComboBox Grid.Row="1" Grid.Column="1" Name="cityTo" SelectionChanged="cityTo_SelectionChanged"/>
+            </Grid>
+        </GroupBox>
+        <DataGrid Name="listView" HorizontalAlignment="Center" SelectionMode="Single" IsReadOnly="True" SelectionUnit="FullRow" AutoGenerateColumns="False" Height="207" Margin="10,283,9.6,0" VerticalAlignment="Top" Width="874">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Wylot z lotniska" Binding="{Binding Path=from_AirPort.name}" Width="215"/>
+                <DataGridTextColumn Header="Przylot na lotnisko" Binding="{Binding Path=to_AirPort.name}" Width="215"/>
+                <DataGridTextColumn Header="Data wylotu" Binding="{Binding Path=flightDate}" Width="215"/>
+                <DataGridTextColumn Header="Cena" Binding="{Binding Path=price}" Width="215"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <GroupBox Header="Wyszukaj bilet" FontWeight="Bold" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" HorizontalAlignment="Left" Height="108" Margin="10,10,0,0" VerticalAlignment="Top" Width="874">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Label Content="Podaj kod biletu:" VerticalAlignment="Center" Margin="5" />
+                <TextBox Grid.Column="1" Name="ticketCode" Width="120" VerticalAlignment="Center" Margin="5"/>
+                <Button Name="SearchTicket" Grid.Column="2" VerticalAlignment="Center" Margin="5" Click="SearchTicket_Click">szukaj</Button>
+            </Grid>
+        </GroupBox>
     </Grid>
 </Window>
