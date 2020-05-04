@@ -2,6 +2,7 @@ package Impl;
 
 import dataAccess.IPassenger;
 import error.InvalidLoginDataException;
+import error.UserWithGivenLoginOrEmailExistsException;
 import model.Passenger;
 import DTO.PassengerDTO;
 
@@ -16,11 +17,11 @@ public class PassengerImpl implements IPassenger {
     public List<Passenger> register(Passenger passenger, List<Passenger> passengerList) {
         List<Passenger> passengers = passengerList
                 .stream()
-                .filter(u -> u.login.equals(passenger.login))
+                .filter(u -> u.login.equals(passenger.login) || u.email.equals(passenger.email))
                 .collect(Collectors
                 .toList());
         if(!passengers.isEmpty()){
-            return null;
+            throw new UserWithGivenLoginOrEmailExistsException("User with the given data exists: login: " + passenger.login + ", email: " + passenger.email + ". Please change login or email");
         }
         passengerList.add(passenger);
         return passengerList;
