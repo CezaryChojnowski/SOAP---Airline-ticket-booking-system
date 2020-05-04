@@ -7,6 +7,7 @@ import model.Ticket;
 
 import java.io.FileNotFoundException;
 import java.util.List;
+import javax.activation.DataHandler;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
@@ -20,6 +21,8 @@ public interface ITicket {
 
     @WebMethod
     public List<Ticket> bookFlight(PassengerDTO passenger, Flight flight, List<Ticket> ticketList);
+
+    DataHandler printTicketToPdf(Ticket ticket);
 
     @WebMethod
     public List<Ticket> getAllTicket(List<Ticket> ticketList);

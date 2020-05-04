@@ -12,13 +12,19 @@ import dataAccess.IPassenger;
 import dataAccess.ITicket;
 import model.*;
 
+import javax.activation.DataHandler;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.xml.ws.BindingType;
+import javax.xml.ws.soap.MTOM;
+import javax.xml.ws.soap.SOAPBinding;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 @WebService
+@MTOM
+@BindingType(value = SOAPBinding.SOAP11HTTP_MTOM_BINDING)
 public class TicketBooking {
     AirPortImp airPortImp = new AirPortImp();
     List<Airport> airPortsList = airPortImp.generateAirPortsList();
@@ -103,5 +109,11 @@ public class TicketBooking {
     public Ticket checkReservation(int number_of_reservation){
         ITicket iTicket = new TicketImpl();
         return iTicket.checkReservation(number_of_reservation, ticketList);
+    }
+
+    @WebMethod
+    public DataHandler printTicketToPdf(Ticket ticket){
+        ITicket iTicket = new TicketImpl();
+        return  iTicket.printTicketToPdf(ticket);
     }
 }

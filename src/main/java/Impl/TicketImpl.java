@@ -11,6 +11,8 @@ import model.Passenger;
 import DTO.PassengerDTO;
 import model.Ticket;
 
+import javax.activation.DataHandler;
+import javax.activation.FileDataSource;
 import javax.jws.WebService;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -40,18 +42,23 @@ public class TicketImpl implements ITicket {
             int ticketCode = generateTicketCode(ticketList);
             Ticket ticket = new Ticket(flight, passengerDTO, ticketCode);
             ticketList.add(ticket);
+        return ticketList;
+    }
 
+    @Override
+    public DataHandler printTicketToPdf(Ticket ticket) {
         PdfWriter writer = null;
         try {
             writer = new PdfWriter("Potwierdzenie.pdf");
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+            document.add(new Paragraph().add("Ticket: " + ticket));
+            document.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        PdfDocument pdf = new PdfDocument(writer);
-        Document document = new Document(pdf);
-        document.add(new Paragraph().add("Flight: " + flight));
-        document.close();
-        return ticketList;
+        FileDataSource dataSource = new FileDataSource("Potwierdzenie.pdf");
+        return new DataHandler(dataSource);
     }
 
     @Override
