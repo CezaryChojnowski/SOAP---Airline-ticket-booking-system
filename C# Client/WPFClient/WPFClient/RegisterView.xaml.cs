@@ -42,7 +42,6 @@ namespace WPFClient
                     var loggedUser = await DataHelper.client.loginAsync(this.login.Text, this.password.Password);
                     DataHelper.loggedUser = loggedUser.@return;
 
-                    DialogResult = true;
                     this.Close();
                 }
             }

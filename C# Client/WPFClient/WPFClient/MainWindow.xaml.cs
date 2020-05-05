@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ServiceModel;
+using System.ServiceModel.Channels;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,20 +23,24 @@ namespace WPFClient
 
             client = new TicketBookingClient();
             DataHelper.client = client;
+            var scope = new OperationContextScope(client.InnerChannel);
 
             try
             {
+                MessageHeader antyCode = MessageHeader.CreateHeader("antiBotCode", "http://ws/", "HE3X6", false, "http://schemas.xmlsoap.org/soap/actor/next");
+                OperationContext.Current.OutgoingMessageHeaders.Add(antyCode);
+
                 countryDTOs = client.findAllTheCountriesThatPlanesDepartFrom();
 
                 foreach (var item in countryDTOs)
                 {
                     this.countryFrom.Items.Add(item.name);
                 }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
             }  
         }
 

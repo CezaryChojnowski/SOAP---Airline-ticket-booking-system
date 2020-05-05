@@ -59,8 +59,7 @@ namespace WPFClient
         {
             try
             {
-                var byteArray = DataHelper.client.printTicketToPdf(this.ticket);
-                File.WriteAllBytes($"bilet{ticket.code}.pdf", byteArray);
+                DataHelper.client.printTicketToPdf(this.ticket);
                 MessageBox.Show("Pomyślnie zapisano bilet!", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
             }

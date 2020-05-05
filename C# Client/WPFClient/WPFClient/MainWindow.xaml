@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:WPFClient"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+        Title="Rezerwacja lotów" Height="600" Width="900" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button Name="book" Content="Rezerwuj lot" HorizontalAlignment="Left" Margin="343,510,0,0" VerticalAlignment="Top" Width="208" Click="book_Click" Height="45"/>
         <GroupBox Header="Miejsce wylotu" Style="{DynamicResource MaterialDesignGroupBox}" materialDesign:ShadowAssist.ShadowDepth="Depth3" BorderThickness="0" FontWeight="Bold" HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="398" Margin="10,123,0,0">

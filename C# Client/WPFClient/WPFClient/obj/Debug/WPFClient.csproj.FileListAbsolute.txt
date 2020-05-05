@@ -25,3 +25,5 @@ C:\Users\Artur\Desktop\Studia\Studia II stopnia\Rozproszone systemy internetowe\
 C:\Users\Artur\Desktop\Studia\Studia II stopnia\Rozproszone systemy internetowe\Projekt SOAP\Airline-ticket-booking-system\C# Client\WPFClient\WPFClient\obj\Debug\App.baml
 C:\Users\Artur\Desktop\Studia\Studia II stopnia\Rozproszone systemy internetowe\Projekt SOAP\Airline-ticket-booking-system\C# Client\WPFClient\WPFClient\obj\Debug\SummaryView.baml
 C:\Users\Artur\Desktop\Studia\Studia II stopnia\Rozproszone systemy internetowe\Projekt SOAP\Airline-ticket-booking-system\C# Client\WPFClient\WPFClient\obj\Debug\WPFClient.csproj.CopyComplete
+C:\Users\Artur\Desktop\Studia\Studia II stopnia\Rozproszone systemy internetowe\Projekt SOAP\Airline-ticket-booking-system\C# Client\WPFClient\WPFClient\obj\Debug\AntiBotCode.g.cs
+C:\Users\Artur\Desktop\Studia\Studia II stopnia\Rozproszone systemy internetowe\Projekt SOAP\Airline-ticket-booking-system\C# Client\WPFClient\WPFClient\obj\Debug\AntiBotCode.baml
