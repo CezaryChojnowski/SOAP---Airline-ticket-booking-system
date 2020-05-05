@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFClient"
         mc:Ignorable="d"
-        Title="RegisterView" Height="250" Width="300" WindowStartupLocation="CenterScreen">
+        Title="Rejesracja" Height="250" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="Imie:" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,15,179.6,0" VerticalAlignment="Top"/>
-        <Label Content="Nazwisko:" FontWeight="Bold" HorizontalAlignment="Left" Margin="52,43,0,0" VerticalAlignment="Top"/>
-        <Label Content="E-mail:" FontWeight="Bold" HorizontalAlignment="Left" Margin="68,71,0,0" VerticalAlignment="Top"/>
-        <Label Content="Login:" FontWeight="Bold" HorizontalAlignment="Left" Margin="73,98,0,0" VerticalAlignment="Top"/>
-        <Label Content="Hasło:" FontWeight="Bold" HorizontalAlignment="Left" Margin="73,124,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Imie:" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,16,179.6,0" VerticalAlignment="Top"/>
+        <Label Content="Nazwisko:" FontWeight="Bold" HorizontalAlignment="Left" Margin="49,47,0,0" VerticalAlignment="Top"/>
+        <Label Content="E-mail:" FontWeight="Bold" HorizontalAlignment="Left" Margin="67,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Login:" FontWeight="Bold" HorizontalAlignment="Left" Margin="71,99,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hasło:" FontWeight="Bold" HorizontalAlignment="Left" Margin="69,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -25,7 +25,7 @@
         <TextBox Name="surname" HorizontalAlignment="Left" Height="23" Margin="119,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="email" HorizontalAlignment="Left" Height="23" Margin="119,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="login" HorizontalAlignment="Left" Height="23" Margin="119,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <PasswordBox Name="password" HorizontalAlignment="Left" Margin="119,127,0,0" VerticalAlignment="Top" Width="120" Height="20"/>
+        <PasswordBox Name="password" HorizontalAlignment="Left" Margin="119,127,0,0" VerticalAlignment="Top" Width="120"/>
         <Button Name="registerAndlogIn" Content="Zarejestruj i zaloguj " HorizontalAlignment="Left" Margin="10,169,0,0" VerticalAlignment="Top" Width="274" Click="registerAndlogIn_Click" Height="31"/>
 
 
