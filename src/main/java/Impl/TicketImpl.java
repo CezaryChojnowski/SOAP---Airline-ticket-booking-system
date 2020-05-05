@@ -48,8 +48,10 @@ public class TicketImpl implements ITicket {
     @Override
     public DataHandler printTicketToPdf(Ticket ticket) {
         PdfWriter writer = null;
+        Integer ticketCode = ticket.getCode();
+        String fileName = new String("Ticket " + ticketCode +".pdf");
         try {
-            writer = new PdfWriter("Ticket.pdf");
+            writer = new PdfWriter(fileName);
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
             document.add(new Paragraph().add("Origin: " + ticket.getFlight().getFrom_AirPort().getCountry() + ", " + ticket.getFlight().getFrom_AirPort().getCity()));
@@ -63,7 +65,7 @@ public class TicketImpl implements ITicket {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        FileDataSource dataSource = new FileDataSource("Potwierdzenie.pdf");
+        FileDataSource dataSource = new FileDataSource(fileName);
         return new DataHandler(dataSource);
     }
 

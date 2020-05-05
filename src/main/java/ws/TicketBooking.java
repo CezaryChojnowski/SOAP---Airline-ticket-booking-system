@@ -26,7 +26,7 @@ import java.util.Set;
 @WebService
 @MTOM
 @BindingType(value = SOAPBinding.SOAP11HTTP_MTOM_BINDING)
-@HandlerChain(file= "mainpackage/handler-chain.xml")
+//@HandlerChain(file= "mainpackage/handler-chain.xml")
 public class TicketBooking {
     AirPortImp airPortImp = new AirPortImp();
     List<Airport> airPortsList = airPortImp.generateAirPortsList();
